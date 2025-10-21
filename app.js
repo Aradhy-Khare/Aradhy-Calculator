@@ -21,7 +21,7 @@ const calculate = (box) => {
     opr = "";
     isOprClicked = false;
     display.innerText = "0";
-    display.style.fontSize = "30px";
+    display.style.fontSize = "25px";
   } else if (
     value === "*" ||
     value === "+" ||
@@ -31,20 +31,20 @@ const calculate = (box) => {
     value === "Power" ||
     value === "Max"
   ) {
-    display.style.fontSize = "30px";
+    display.style.fontSize = "25px";
     if (firstNum !== "") {
       opr = value;
       display.innerText = firstNum + " " + opr;
       isOprClicked = true;
     }
   } else if (value === "=") {
-    display.style.fontSize = "30px";
+    display.style.fontSize = "25px";
     if (firstNum !== "" || secondNum !== "" || opr !== "") {
       let result = 0;
       let num1 = parseFloat(firstNum);
       let num2 = parseFloat(secondNum);
-      if (opr === "/" && secondNum === "0") {
-        display.style.fontSize = "50px";
+      if (opr === "/" && parseFloat(secondNum) === 0) {
+        display.style.fontSize = "25px";
         display.innerText = "∞";
         firstNum = 0;
       } else {
@@ -55,12 +55,14 @@ const calculate = (box) => {
         if (opr === "%") result = num1 % num2;
         if (opr === "Power") result = Math.pow(num1, num2);
         if (opr === "Max") result = Math.max(num1, num2);
-        let answer = result.toFixed(10);
+
+        let answerNum = result; // number
         let pretty;
-        if(answer % 1 == 0){
-          pretty = parseInt(answer);
+        if (Number.isInteger(answerNum)) {
+          pretty = String(answerNum);
         } else {
-          pretty = answer;
+          // fix to 10 decimals then remove trailing zeros
+          pretty = parseFloat(answerNum.toFixed(10)).toString();
         }
         display.innerText = pretty;
         firstNum = pretty;
@@ -70,7 +72,7 @@ const calculate = (box) => {
       isOprClicked = false;
     }
   } else {
-    display.style.fontSize = "30px";
+    display.style.fontSize = "25px";
     if (isOprClicked) {
       if (value === "." && secondNum.includes(".")) return;
       secondNum += value;
