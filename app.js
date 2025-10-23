@@ -21,7 +21,6 @@ const calculate = (box) => {
     opr = "";
     isOprClicked = false;
     display.innerText = "0";
-    display.style.fontSize = "25px";
   } else if (
     value === "*" ||
     value === "+" ||
@@ -31,20 +30,17 @@ const calculate = (box) => {
     value === "Power" ||
     value === "Max"
   ) {
-    display.style.fontSize = "25px";
     if (firstNum !== "") {
       opr = value;
       display.innerText = firstNum + " " + opr;
       isOprClicked = true;
     }
   } else if (value === "=") {
-    display.style.fontSize = "25px";
     if (firstNum !== "" || secondNum !== "" || opr !== "") {
       let result = 0;
       let num1 = parseFloat(firstNum);
       let num2 = parseFloat(secondNum);
       if (opr === "/" && parseFloat(secondNum) === 0) {
-        display.style.fontSize = "25px";
         display.innerText = "∞";
         firstNum = 0;
       } else {
@@ -72,7 +68,6 @@ const calculate = (box) => {
       isOprClicked = false;
     }
   } else {
-    display.style.fontSize = "25px";
     if (isOprClicked) {
       if (value === "." && secondNum.includes(".")) return;
       secondNum += value;
