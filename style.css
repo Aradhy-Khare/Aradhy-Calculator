@@ -1,10 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 body {
-  background-color: beige;
+  background-color: #70b4df;
 }
 .container {
   display: flex;
@@ -18,12 +18,12 @@ h1 {
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  padding: 10px 50px;
+  padding: 10px 30px;
   color: white;
   border-radius: 10px;
-  background-color: black;
+  background-color: #000000;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
-  font-family: sans-serif;
+  font-weight: 600;
 }
 .calculator {
   height: 48vh;
