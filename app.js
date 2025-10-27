@@ -17,20 +17,20 @@ const changeColor = (box) => {
   if (box.innerText === "=") {
     box.style.background = "linear-gradient(135deg, #FFD700 60%, #FF9800 100%)";
     box.style.color = "#222";
-    box.style.boxShadow = "0 2px 12px rgba(255, 215, 0, 0.18)";
+    box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
   } else if (box.innerText === "Max") {
     box.style.background = "linear-gradient(135deg, #00c6ff 60%, #0072ff 100%)";
     box.style.color = "#fff";
-    box.style.boxShadow = "0 2px 12px rgba(0, 198, 255, 0.18)";
+    box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
   } else if (box.innerText === "Power") {
     box.style.background = "linear-gradient(135deg, #52c903ff 60%, #035310ff 100%)";
     box.style.color = "#fff";
-    box.style.boxShadow = "0 2px 12px rgba(255, 106, 0, 0.18)";
+    box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
   } 
    else if (box.innerText === "C") {
     box.style.background = "linear-gradient(135deg, #ff6a00 60%, #ee0979 100%)";
     box.style.color = "#fff";
-    box.style.boxShadow = "0 2px 12px rgba(255, 106, 0, 0.18)";
+    box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
   } 
 };
 

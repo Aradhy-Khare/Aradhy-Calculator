@@ -15,7 +15,7 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.5;
-  z-index: -1; /* behind page content */
+  z-index: -1; 
 }
 .seven{
   border-bottom-left-radius: 10px;
@@ -55,24 +55,23 @@ h1 {
 }
 .screen {
   height: 22%;
-  width: 100%;
+  width: 96.5%;
   background: rgba(0,0,0,0.7);
   display: flex;
-  margin-bottom: 6px;
   align-items: center;
   justify-content: center;
   font-size: 1.25em;
   color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   overflow: auto;
+  margin: 5px;
   scrollbar-color: black transparent;
   border: 2px solid #4e54c8;
   box-shadow: 0 0 18px 2px #4e54c8, 0 2px 8px rgba(0,0,0,0.18);
   backdrop-filter: blur(2px);
 }
 .main {
-  height: 75%;
+  height:74%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -81,18 +80,18 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 82%;
+  height: 75%;
   width: 89%;
   font-size: 1em;
   cursor: pointer;
   border: none;
   outline: none;
   color: black;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15), 0 1.5px 0 #bdbdbd inset;
-  transition: box-shadow 0.3s, background 0.3s, width 0.3s, height 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: 0.2s linear;
   z-index: 1;
   margin: 5px;
-  border-radius: 15px;
+  border-radius: 12px;
   background: rgba(255,255,255,0.18);
   backdrop-filter: blur(12px) saturate(180%);
 }
@@ -103,6 +102,7 @@ h1 {
   background: linear-gradient(135deg, #353535 60%, #4e54c8 100%);
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   transform: scale(1.07);
+  color: white;
 }
 @media screen and ((max-width : 1000px) and (min-width : 401px)){
   .calculator{
