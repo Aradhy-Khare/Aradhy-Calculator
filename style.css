@@ -4,12 +4,18 @@
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background-color: #c1bdb3;
+  background-color: #C6ECAE;
+}
+.seven{
+  border-bottom-left-radius: 10px;
+}
+.max{
+  border-bottom-right-radius: 10px
 }
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   height: 90vh;
 }
@@ -17,7 +23,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
   padding: 10px 30px;
   color: white;
   border-radius: 10px;
@@ -60,7 +65,12 @@ h1 {
   background-color: #2a2a2a;
   font-size: 1em;
   cursor: pointer;
+  border: none;
+  outline: none;
   color: white;
+}
+.num:focus{
+  outline: none;
 }
 .num:hover {
   background-color: #353535;

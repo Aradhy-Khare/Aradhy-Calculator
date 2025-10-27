@@ -2,19 +2,23 @@ let display = document.querySelector(".screen");
 
 let boxes = document.querySelectorAll(".num");
 
+const validInput = [...Array(10).keys()].map(String).concat(["."]);
+
 let firstNum = "";
 let secondNum = "";
 let opr = "";
 let isOprClicked = false;
 
-for (let i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("click", function () {
-    calculate(boxes[i].innerText);
-  });
-}
+document.addEventListener("keydown", (event) => {
+  calculate(event.key);
+});
 
-const calculate = (box) => {
-  const value = box;
+boxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    calculate(box.innerText);
+  });
+});
+const calculate = (value) => {
   if (value === "C") {
     firstNum = "";
     secondNum = "";
@@ -35,14 +39,16 @@ const calculate = (box) => {
       display.innerText = firstNum + " " + opr;
       isOprClicked = true;
     }
-  } else if (value === "=") {
-    if (firstNum !== "" || secondNum !== "" || opr !== "") {
+  } else if (value === "=" || value === "Enter") {
+    if (firstNum !== "" && secondNum !== "" && opr !== "") {
       let result = 0;
       let num1 = parseFloat(firstNum);
       let num2 = parseFloat(secondNum);
       if (opr === "/" && parseFloat(secondNum) === 0) {
         display.innerText = "∞";
-        firstNum = 0;
+        firstNum = "0";
+        opr = "";
+        secondNum = "";
       } else {
         if (opr === "+") result = num1 + num2;
         if (opr === "-") result = num1 - num2;
@@ -67,7 +73,7 @@ const calculate = (box) => {
       secondNum = "";
       isOprClicked = false;
     }
-  } else {
+  } else if(validInput.includes(value)){
     if (isOprClicked) {
       if (value === "." && secondNum.includes(".")) return;
       secondNum += value;
