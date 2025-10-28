@@ -22,16 +22,16 @@ const changeColor = (box) => {
     box.style.background = "linear-gradient(135deg, #00c6ff 60%, #0072ff 100%)";
     box.style.color = "#fff";
     box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
-  } else if (box.innerText === "Power") {
-    box.style.background = "linear-gradient(135deg, #52c903ff 60%, #035310ff 100%)";
+  } else if (box.innerText === "^") {
+    box.style.background =
+      "linear-gradient(135deg, #52c903ff 60%, #035310ff 100%)";
     box.style.color = "#fff";
     box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
-  } 
-   else if (box.innerText === "C") {
+  } else if (box.innerText === "C") {
     box.style.background = "linear-gradient(135deg, #ff6a00 60%, #ee0979 100%)";
     box.style.color = "#fff";
     box.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
-  } 
+  }
 };
 
 boxes.forEach((box) => {
@@ -53,7 +53,7 @@ const calculate = (value) => {
     value === "-" ||
     value === "/" ||
     value === "%" ||
-    value === "Power" ||
+    value === "^" ||
     value === "Max"
   ) {
     if (firstNum !== "") {
@@ -77,7 +77,7 @@ const calculate = (value) => {
         if (opr === "*") result = num1 * num2;
         if (opr === "/") result = num1 / num2;
         if (opr === "%") result = num1 % num2;
-        if (opr === "Power") result = Math.pow(num1, num2);
+        if (opr === "^") result = Math.pow(num1, num2);
         if (opr === "Max") result = Math.max(num1, num2);
 
         let answerNum = result; // number
