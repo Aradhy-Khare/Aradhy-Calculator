@@ -66,8 +66,7 @@ h1 {
   overflow: auto;
   margin: 5px;
   scrollbar-color: black transparent;
-  border: 2px solid #4e54c8;
-  box-shadow: 0 0 18px 2px #4e54c8, 0 2px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 0 14px rgba(0,0,0,0.6);
   backdrop-filter: blur(2px);
 }
 .main {
@@ -119,4 +118,42 @@ h1 {
   h1{
     font-size: 20px;
   }
+}
+
+.theme-btn{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.05rem;
+  margin-left: 10px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: inherit;
+}
+
+body.alt-theme {
+  background: none;
+  background-image: url('img2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+body.alt-theme::before{
+  opacity: 0;
+  background-image: none;
+}
+
+body.alt-theme .container h1{
+  color: white; 
+  background: rgba(255, 255, 255, 0.281);
+  box-shadow: 0 0 15px rgba(0,0,0,0.12);
+}
+
+body.alt-theme .num{
+  color: white;
+}
+
+body.alt-theme .num:hover{
+  background: linear-gradient(135deg, #4e54c8 60%, #353535 100%);
+  color: white;
 }

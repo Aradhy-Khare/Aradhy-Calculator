@@ -34,6 +34,15 @@ const changeColor = (box) => {
   }
 };
 
+const themeBtn = document.getElementById("themeToggle");
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("alt-theme");
+    const isAlt = document.body.classList.contains("alt-theme");
+    themeBtn.innerText = isAlt ? "🌞" : "🌗";
+  });
+}
+
 boxes.forEach((box) => {
   changeColor(box);
   box.addEventListener("click", () => {
