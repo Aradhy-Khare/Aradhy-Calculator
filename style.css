@@ -66,8 +66,6 @@ h1 {
   overflow: auto;
   margin: 5px;
   scrollbar-color: black transparent;
-  box-shadow: 0 0 14px rgba(0,0,0,0.6);
-  backdrop-filter: blur(2px);
 }
 .main {
   height:74%;
