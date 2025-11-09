@@ -39,7 +39,7 @@ if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("alt-theme");
     const isAlt = document.body.classList.contains("alt-theme");
-    themeBtn.innerText = isAlt ? "🌞" : "🌗";
+    themeBtn.innerText = isAlt ? "🌞" : "🌙";
   });
 }
 
